@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: roshanazuretest 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: roshanazuretest
+  template:
+    metadata:
+      labels:
+        app: roshanazuretest 
+    spec:
+      containers:
+        - name: roshanazuretest 
+          image: myregistryfortest.azurecr.io/roshanazuretest
+          ports:
+          - containerPort: 80
